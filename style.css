@@ -215,3 +215,137 @@ body {
         margin-top: 10px;
     }
 }
+
+/* =========================
+   Expense Management
+========================= */
+
+.expense-section {
+    background-color: #FFFFFF;
+    border: 1px solid #E7EDF4;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.expense-section h2 {
+    font-size: 21px;
+    color: #304B68;
+    margin-bottom: 25px;
+}
+
+/* Form */
+
+#expenseForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #526579;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DCE5EF;
+    border-radius: 8px;
+    background-color: #FAFCFE;
+    color: #263445;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #83A9D0;
+}
+
+/* Submit Button */
+
+.submit-btn {
+    grid-column: 1 / -1;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: #668DB6;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.submit-btn:hover {
+    background-color: #52799F;
+}
+
+/* Expense Table */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.expense-table th {
+    background-color: #EEF4FB;
+    color: #526579;
+    font-size: 14px;
+    padding: 14px;
+    white-space: nowrap;
+}
+
+.expense-table td {
+    padding: 14px;
+    border-bottom: 1px solid #EDF1F5;
+    color: #526579;
+    font-size: 14px;
+}
+
+.expense-table .empty-message {
+    text-align: center;
+    color: #A0ACB9;
+    padding: 25px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .expense-section {
+        padding: 20px 15px;
+    }
+
+    #expenseForm {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .expense-section h2 {
+        font-size: 19px;
+    }
+
+    .expense-table th,
+    .expense-table td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+}
