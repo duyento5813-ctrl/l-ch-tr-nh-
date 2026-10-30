@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -9,6 +10,7 @@
 
 <body>
 
+    <!-- Navigation Bar: 保持原樣 -->
     <nav class="navbar">
         <div class="nav-container">
 
@@ -26,6 +28,7 @@
         </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="page-container">
 
         <div class="page-header">
@@ -36,12 +39,205 @@
             <p>管理個人收入、支出與財務預算。</p>
         </div>
 
+        <!-- Add Expense Form -->
+        <section class="expense-section">
+
+            <h2>新增支出</h2>
+
+            <form id="expenseForm">
+
+                <div class="form-group">
+                    <label for="expenseName">支出名稱</label>
+                    <input
+                        type="text"
+                        id="expenseName"
+                        placeholder="請輸入支出名稱"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="expenseAmount">支出金額</label>
+                    <input
+                        type="number"
+                        id="expenseAmount"
+                        placeholder="請輸入金額"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="expenseCategory">支出類別</label>
+                    <select id="expenseCategory" required>
+                        <option value="">請選擇類別</option>
+                        <option value="飲食">飲食</option>
+                        <option value="交通">交通</option>
+                        <option value="住宿">住宿</option>
+                        <option value="購物">購物</option>
+                        <option value="娛樂">娛樂</option>
+                        <option value="學習">學習</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="expenseDate">支出日期</label>
+                    <input
+                        type="date"
+                        id="expenseDate"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    新增支出
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- Expense List -->
+        <section class="expense-section">
+
+            <h2>支出清單</h2>
+
+            <div class="table-wrapper">
+
+                <table class="expense-table">
+
+                    <thead>
+                        <tr>
+                            <th>支出名稱</th>
+                            <th>金額</th>
+                            <th>類別</th>
+                            <th>日期</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="expenseList">
+                        <tr>
+                            <td colspan="4" class="empty-message">
+                                目前尚無支出紀錄
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <p>線上帳務與行程同步功能即將推出</p>
         <span>Personal Life & Expense Management System</span>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+
+        const expenseForm = document.getElementById("expenseForm");
+        const expenseList = document.getElementById("expenseList");
+
+        const STORAGE_KEY = "personalExpenses";
+
+        // 讀取 localStorage 資料
+        let expenses = JSON.parse(
+            localStorage.getItem(STORAGE_KEY) || "[]"
+        );
+
+        // 顯示支出清單
+        function renderExpenses() {
+
+            expenseList.innerHTML = "";
+
+            if (expenses.length === 0) {
+                expenseList.innerHTML = `
+                    <tr>
+                        <td colspan="4" class="empty-message">
+                            目前尚無支出紀錄
+                        </td>
+                    </tr>
+                `;
+                return;
+            }
+
+            expenses.forEach(function(expense) {
+
+                const row = document.createElement("tr");
+
+                const nameCell = document.createElement("td");
+                nameCell.textContent = expense.name;
+
+                const amountCell = document.createElement("td");
+                amountCell.textContent =
+                    Number(expense.amount).toLocaleString("zh-TW");
+
+                const categoryCell = document.createElement("td");
+                categoryCell.textContent = expense.category;
+
+                const dateCell = document.createElement("td");
+                dateCell.textContent = expense.date;
+
+                row.appendChild(nameCell);
+                row.appendChild(amountCell);
+                row.appendChild(categoryCell);
+                row.appendChild(dateCell);
+
+                expenseList.appendChild(row);
+
+            });
+        }
+
+        // 新增支出
+        expenseForm.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const name = document.getElementById("expenseName").value.trim();
+            const amount = Number(
+                document.getElementById("expenseAmount").value
+            );
+            const category = document.getElementById("expenseCategory").value;
+            const date = document.getElementById("expenseDate").value;
+
+            if (!name || !category || !date || !Number.isFinite(amount) || amount <= 0) {
+                return;
+            }
+
+            const newExpense = {
+                name: name,
+                amount: amount,
+                category: category,
+                date: date
+            };
+
+            expenses.push(newExpense);
+
+            // 儲存至 localStorage
+            localStorage.setItem(
+                STORAGE_KEY,
+                JSON.stringify(expenses)
+            );
+
+            // 更新清單
+            renderExpenses();
+
+            // 清空表單
+            expenseForm.reset();
+
+        });
+
+        // 初始化清單
+        renderExpenses();
+
+    </script>
 
 </body>
 </html>
