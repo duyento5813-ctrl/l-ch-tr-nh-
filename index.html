@@ -9,132 +9,130 @@
 
 <body>
 
-    <div class="container">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">Personal Management</a>
 
-        <!-- Header -->
-        <header class="header">
-            <div class="logo">Personal Management</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">首頁</a>
+                <a href="daily.html">日常生活管理</a>
+                <a href="finance.html">個人費用管理</a>
+                <a href="analysis.html">消費分析</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <p class="eyebrow">PERSONAL MANAGEMENT SYSTEM</p>
+
             <h1>個人生活與生活支出管理系統</h1>
+
             <p class="subtitle">
                 整合日常生活、個人收支與消費分析，
                 讓生活管理更加簡單、有條理。
             </p>
-        </header>
+        </div>
+    </header>
 
-        <!-- Main Content -->
-        <main>
+    <!-- Main Content -->
+    <main class="container">
 
-            <section class="system-section">
+        <section class="system-section">
 
-                <h2>系統核心功能</h2>
-                <p class="section-description">
-                    透過三大核心子系統，全面管理個人生活與財務。
-                </p>
+            <h2>系統核心功能</h2>
 
-                <div class="system-grid">
+            <p class="section-description">
+                透過三大核心子系統，全面管理個人生活與財務。
+            </p>
 
-                    <!-- System 1 -->
-                    <div class="system-card">
-                        <div class="card-icon">📅</div>
+            <div class="system-grid">
 
-                        <h3>01. 日常生活管理系統</h3>
+                <!-- Daily System -->
+                <div class="system-card">
 
-                        <p class="card-description">
-                            協助使用者安排日常行程、追蹤待辦事項，
-                            並記錄每日生活。
-                        </p>
+                    <div class="card-icon">📅</div>
 
-                        <div class="function-list">
-                            <div class="function-item">
-                                <span>01</span>
-                                行程管理
-                            </div>
+                    <h3>01. 日常生活管理系統</h3>
 
-                            <div class="function-item">
-                                <span>02</span>
-                                待辦事項
-                            </div>
+                    <p class="card-description">
+                        協助使用者安排日常行程、追蹤待辦事項，
+                        並記錄每日生活。
+                    </p>
 
-                            <div class="function-item">
-                                <span>03</span>
-                                生活紀錄
-                            </div>
-                        </div>
+                    <div class="function-list">
+                        <div class="function-item">行程管理</div>
+                        <div class="function-item">待辦事項</div>
+                        <div class="function-item">生活紀錄</div>
                     </div>
 
-
-                    <!-- System 2 -->
-                    <div class="system-card">
-                        <div class="card-icon">💰</div>
-
-                        <h3>02. 個人費用管理系統</h3>
-
-                        <p class="card-description">
-                            協助使用者管理日常收入與支出，
-                            並規劃個人財務預算。
-                        </p>
-
-                        <div class="function-list">
-                            <div class="function-item">
-                                <span>01</span>
-                                支出管理
-                            </div>
-
-                            <div class="function-item">
-                                <span>02</span>
-                                收入管理
-                            </div>
-
-                            <div class="function-item">
-                                <span>03</span>
-                                預算管理
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <!-- System 3 -->
-                    <div class="system-card">
-                        <div class="card-icon">📊</div>
-
-                        <h3>03. 消費分析系統</h3>
-
-                        <p class="card-description">
-                            透過消費分類與統計報表，
-                            幫助使用者了解消費習慣及財務狀況。
-                        </p>
-
-                        <div class="function-list">
-                            <div class="function-item">
-                                <span>01</span>
-                                消費分類
-                            </div>
-
-                            <div class="function-item">
-                                <span>02</span>
-                                月度消費統計
-                            </div>
-
-                            <div class="function-item">
-                                <span>03</span>
-                                消費報表
-                            </div>
-                        </div>
-                    </div>
+                    <a href="daily.html" class="card-link">
+                        進入系統 →
+                    </a>
 
                 </div>
 
-            </section>
+                <!-- Finance System -->
+                <div class="system-card">
 
-        </main>
+                    <div class="card-icon">💰</div>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>線上帳務與行程同步功能即將推出</p>
-            <span>Personal Life & Expense Management System</span>
-        </footer>
+                    <h3>02. 個人費用管理系統</h3>
 
-    </div>
+                    <p class="card-description">
+                        協助使用者管理日常收入與支出，
+                        並規劃個人財務預算。
+                    </p>
+
+                    <div class="function-list">
+                        <div class="function-item">支出管理</div>
+                        <div class="function-item">收入管理</div>
+                        <div class="function-item">預算管理</div>
+                    </div>
+
+                    <a href="finance.html" class="card-link">
+                        進入系統 →
+                    </a>
+
+                </div>
+
+                <!-- Analysis System -->
+                <div class="system-card">
+
+                    <div class="card-icon">📊</div>
+
+                    <h3>03. 消費分析系統</h3>
+
+                    <p class="card-description">
+                        透過消費分類與統計報表，
+                        幫助使用者了解消費習慣及財務狀況。
+                    </p>
+
+                    <div class="function-list">
+                        <div class="function-item">消費分類</div>
+                        <div class="function-item">月度消費統計</div>
+                        <div class="function-item">消費報表</div>
+                    </div>
+
+                    <a href="analysis.html" class="card-link">
+                        進入系統 →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>線上帳務與行程同步功能即將推出</p>
+        <span>Personal Life & Expense Management System</span>
+    </footer>
 
 </body>
 </html>
