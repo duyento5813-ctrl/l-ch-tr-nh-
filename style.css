@@ -1,0 +1,217 @@
+/* General Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+    background-color: #F4F7FB;
+    color: #263445;
+    line-height: 1.7;
+}
+
+/* Main Container */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 45px 20px 55px;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: #7396BD;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #263F5B;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 15px;
+    color: #77889B;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* System Section */
+.system-section {
+    padding: 20px 0 50px;
+}
+
+.system-section h2 {
+    text-align: center;
+    font-size: 23px;
+    color: #304B68;
+    margin-bottom: 8px;
+}
+
+.section-description {
+    text-align: center;
+    font-size: 14px;
+    color: #8998A9;
+    margin-bottom: 35px;
+}
+
+/* System Grid */
+.system-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* System Card */
+.system-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E7EDF4;
+    border-radius: 14px;
+    padding: 30px 25px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.system-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(61, 91, 125, 0.09);
+}
+
+/* Card Icon */
+.card-icon {
+    width: 52px;
+    height: 52px;
+    background-color: #EEF4FB;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+/* Card Title */
+.system-card h3 {
+    font-size: 18px;
+    color: #304B68;
+    margin-bottom: 12px;
+}
+
+/* Card Description */
+.card-description {
+    font-size: 14px;
+    color: #8492A3;
+    min-height: 72px;
+    margin-bottom: 22px;
+}
+
+/* Function List */
+.function-list {
+    border-top: 1px solid #EDF1F5;
+    padding-top: 15px;
+}
+
+.function-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 9px 0;
+    font-size: 14px;
+    color: #526579;
+}
+
+.function-item span {
+    font-size: 11px;
+    color: #83A4C8;
+    background-color: #F0F5FA;
+    border-radius: 5px;
+    padding: 2px 7px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 30px 15px;
+    border-top: 1px solid #E5EBF2;
+    margin-top: 20px;
+}
+
+.footer p {
+    font-size: 15px;
+    color: #6689AF;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.footer span {
+    font-size: 11px;
+    color: #A0ACB9;
+    letter-spacing: 1px;
+}
+
+/* Responsive - Tablet */
+@media (max-width: 900px) {
+
+    .system-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header h1 {
+        font-size: 27px;
+    }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 600px) {
+
+    .container {
+        padding: 20px 16px;
+    }
+
+    .header {
+        padding: 35px 10px 40px;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+
+    .system-section h2 {
+        font-size: 20px;
+    }
+
+    .system-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .system-card {
+        padding: 25px 22px;
+    }
+
+    .card-description {
+        min-height: auto;
+    }
+
+    .footer {
+        margin-top: 10px;
+    }
+}
