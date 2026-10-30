@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消費分析系統</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="index.html" class="nav-logo">
+                Personal Management
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html">首頁</a>
+                <a href="daily.html">日常生活管理</a>
+                <a href="finance.html">個人費用管理</a>
+                <a href="analysis.html" class="active">消費分析</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <main class="page-container">
+
+        <div class="page-header">
+            <p class="eyebrow">CONSUMPTION ANALYSIS</p>
+
+            <h1>消費分析系統</h1>
+
+            <p>分析個人消費分類、月度統計與消費報表。</p>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>線上帳務與行程同步功能即將推出</p>
+        <span>Personal Life & Expense Management System</span>
+    </footer>
+
+</body>
+</html>
